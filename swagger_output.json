@@ -1,0 +1,105 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the APIs for the project.",
+    "version": "1.0.0",
+    "title": "Conference Room",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "user",
+      "description": "CRUD APIs for users"
+    }
+  ],
+  "schemes": ["https", "http"],
+  "paths": {
+    "/api/user": {
+      "post": {
+        "tags": ["user"],
+        "summary": "Create a new user",
+        "description": "you can create a user with membership or admin. only admin can create a user without password or with the userType of admin and member. regular user must signup with a password",
+        "operationId": "createUser",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "The user to create.",
+            "schema": {
+              "$ref": "#/definitions/CreateUser"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccess"
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateUser": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^05[\\d]{8}$"
+        },
+        "userType": {
+          "type": "string",
+          "description": "",
+          "enum": ["admin", "member", "user"]
+        },
+        "discountPercent": {
+          "type": "number",
+          "default": 20
+        },
+        "creditMonth": {
+          "type": "number",
+          "default": 400
+        },
+        "creditBalance": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    },
+    "ApiSuccess": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

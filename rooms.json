@@ -1,0 +1,28 @@
+[          {
+            "_id": {
+              "$oid": "6249e17540c4fa22fa2742e0"
+            },
+            "name": "Nevel",
+            "maxOfPeople": 7,
+            "hourlyMoneyCost":80,
+            "hourlyCreditCost": 100
+          }
+          {
+            "_id": {
+              "$oid": "6249e17540c4fa22fa2742e1"
+            },
+            "name": "Kinor",
+            "maxOfPeople": 5,
+            "hourlyMoneyCost":50,
+            "hourlyCreditCost": 100
+          }
+          {
+            "_id": {
+              "$oid": "6249e17540c4fa22fa2742e3"
+            },
+            "name": "Shofar",
+            "maxOfPeople": 3,
+            "hourlyMoneyCost":30,
+            "hourlyCreditCost": 100
+          }
+    ]

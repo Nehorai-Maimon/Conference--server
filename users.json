@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "6249e17540c4fa22fa2742d2"
+  },
+  "firstName": "yael",
+  "lastName": "zeevi",
+  "password": "1234",
+  "email": "talrogjgz87@gmail.com",
+  "phone": "0528792515",
+  "isAdmin": false,
+  "isSubscribed": false,
+  "discountPercentage": 0,
+  "creditsData": {
+    "monthlyCredits": 400,
+    "currentMonthBalance": 400,
+    "nextMonthBalance": 400,
+    "purchasedCreditBalance": 100
+  }
+}]
